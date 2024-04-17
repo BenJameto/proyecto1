@@ -4,7 +4,6 @@ import java.util.List;
 public class GestorOfertas {
     private static GestorOfertas instance = null;
     private List<ObservadorOferta> observadores;
-    private String ofertaActual;
 
     public static GestorOfertas getInstance(){
         if (instance == null){
@@ -26,7 +25,6 @@ public class GestorOfertas {
     }
 
     public void notificarOferta(String oferta) {
-        ofertaActual = oferta;
         for (ObservadorOferta observador : observadores) {
             observador.recibirOferta(oferta);
         }

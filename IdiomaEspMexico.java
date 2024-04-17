@@ -25,9 +25,5 @@ public class IdiomaEspMexico implements IdiomaStrategy {
     public String obtenerMensajeFechaEntrega() {
         return "tu compra te llegara en maximo maximo maximo 2 dias bro (si todo sale bien)";
     }
-
-    
-
-    
     
 }

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class CatalogoReal implements Catalogo {
     private ArrayList<Producto> productos;
@@ -18,19 +17,16 @@ public class CatalogoReal implements Catalogo {
 
     @Override
     public void agregarProducto(Producto producto) {
-        // TODO Auto-generated method stub
-        
+        productos.add(producto);
     }
 
     @Override
     public void eliminarProducto(String codigoBarras) {
-        // TODO Auto-generated method stub
-        
+        productos.removeIf(p -> p.getCodigoBarras().equals(codigoBarras));
     }
 
     @Override
-    public List<Producto> obtenerProductos() {
-        // TODO Auto-generated method stub
-        return null;
+    public ArrayList<Producto> obtenerProductos() {
+        return productos;
     }
 }
