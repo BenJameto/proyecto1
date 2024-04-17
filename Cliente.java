@@ -11,6 +11,7 @@ public class Cliente {
     private String cuentaBancaria;
     private String pais;
     private UUID idCliente;
+    private IdiomaStrategy idiomaStrategy;
 
     public Cliente(String nombreUsuario, String contrasenia, String nombre, String telefono, String direccion, String cuentaBancaria, String pais) {
         this.nombreUsuario = nombreUsuario;
@@ -86,6 +87,28 @@ public class Cliente {
     public void setIdCliente(UUID idCliente) {
         this.idCliente = idCliente;
     }
-
     
+    public void setIdiomaStrategy (IdiomaStrategy idiomaStrategy){
+        this.idiomaStrategy = idiomaStrategy;
+    }
+
+    public String obtenerSaludo(){
+        return idiomaStrategy.obtenerSaludo();
+    }
+    
+    public String obtenerDespedida(){
+        return idiomaStrategy.obtenerDespedida();
+    }
+
+    public String obtenerMenu(){
+        return idiomaStrategy.obtenerMenuOpciones();
+    }
+
+    public String compraExitosa(){
+        return idiomaStrategy.obtenerMensajeCompraExitosa();
+    }
+
+    public String fechaEntrega(){
+        return idiomaStrategy.obtenerMensajeFechaEntrega();
+    }
 }
