@@ -12,8 +12,12 @@ public class Cliente {
     private String pais;
     private UUID idCliente;
     private IdiomaStrategy idiomaStrategy;
+    private ObservadorOferta estrategiaOferta;
 
-    public Cliente(String nombreUsuario, String contrasenia, String nombre, String telefono, String direccion, String cuentaBancaria, String pais) {
+    //constructor
+    public Cliente(String nombreUsuario, String contrasenia, String nombre, String telefono, String direccion,
+            String cuentaBancaria, String pais, UUID idCliente, IdiomaStrategy idiomaStrategy,
+            ObservadorOferta estrategiaOferta) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.nombre = nombre;
@@ -21,9 +25,28 @@ public class Cliente {
         this.direccion = direccion;
         this.cuentaBancaria = cuentaBancaria;
         this.pais = pais;
-        this.idCliente = UUID.randomUUID();
+        this.idCliente = idCliente;
+        this.idiomaStrategy = idiomaStrategy;
+        this.estrategiaOferta = estrategiaOferta;
     }
 
+    public IdiomaStrategy getIdiomaStrategy() {
+        return idiomaStrategy;
+    }
+
+    public void setIdiomaStrategy (IdiomaStrategy idiomaStrategy){
+        this.idiomaStrategy = idiomaStrategy;
+    }
+
+    public ObservadorOferta getEstrategiaOferta() {
+        return estrategiaOferta;
+    }
+
+    public void setEstrategiaOferta(ObservadorOferta estrategiaOferta) {
+        this.estrategiaOferta = estrategiaOferta;
+    }
+
+     //GETERS AND SETTERS
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -88,9 +111,8 @@ public class Cliente {
         this.idCliente = idCliente;
     }
     
-    public void setIdiomaStrategy (IdiomaStrategy idiomaStrategy){
-        this.idiomaStrategy = idiomaStrategy;
-    }
+    
+    //PARA EL IDIOMA
 
     public String obtenerSaludo(){
         return idiomaStrategy.obtenerSaludo();
