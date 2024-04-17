@@ -4,6 +4,7 @@ public class CatalogoReal implements Catalogo {
     private ArrayList<Producto> productos;
 
     public CatalogoReal(){
+        productos = new ArrayList<>();
         productos.add(new Producto("4648728326817107", "Laptop ", "Electronica", 9999.99));
         productos.add(new Producto("9349613773773701", "Smartphone", "Electronica", 15099.99));
         productos.add(new Producto("9576725813100027", "Impresora", "Electronica", 3999.99));
