@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class TiendaVirtual {
     private GestorClientes gestorClientes;
@@ -12,6 +13,20 @@ public class TiendaVirtual {
         gestorClientes = new GestorClientes();
         catalogo = new CatalogoProxy();
         carritoCompras = new HashMap<>();
+
+        UUID idCliete1 = UUID.randomUUID();
+        UUID idCliete2 = UUID.randomUUID();
+        UUID idCliete3 = UUID.randomUUID();
+        UUID idCliete4 = UUID.randomUUID();
+
+        gestorClientes.registrarCliente(new Cliente("Clau", "1234clau", "Claudia", "5500000001", "Tlahuiz ICC I", 
+        "361301835973090404", "Estados Unidos", idCliete1, new IdiomaIngles(), new OfertaElectronica()));
+        gestorClientes.registrarCliente(new Cliente("Benja", "1234benja", "Benjamin", "5500000002", "Tlahuiz ICC II",
+        "514357355943778741", "Mexico", idCliete2, new IdiomaEspMexico(), new OfertaAlimentos()));
+        gestorClientes.registrarCliente(new Cliente("Maistra", "1234maistra", "Rosa", "5500000003", "Tlahuiz Taller de ing de softwere", 
+        "909429676469513296", "España", idCliete3, new IdiomaEspanol(), new OfertaElectrodomesticos()));
+        gestorClientes.registrarCliente(new Cliente("Achicincle", "1234achichincle", "Ayudante ayudantoso", "5500000004", "Tlahuiz Smbolicos", 
+        "250034606742318012", "Estados Unidos", idCliete4, new IdiomaIngles(), new OfertaAlimentos()));
     }
 
     public void iniciarSesion() {
